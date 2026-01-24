@@ -2,6 +2,8 @@
 
 Pre-composed CSS themes built on Chi Design System tokens. Import one file and get reset, tokens, and base styles.
 
+Built on [@okja/chi-tokens](https://github.com/Okja-Engineering/chi-tokens) - the foundational design tokens for the Chi Design System.
+
 ## Installation
 
 ```bash
@@ -51,49 +53,39 @@ All themes include design tokens:
 }
 ```
 
-### Available Tokens
+### Token Categories
 
-**Colors** (auto light/dark via `prefers-color-scheme`)
-- `--color-primary`, `--color-on-primary`
-- `--color-secondary`, `--color-on-secondary`
-- `--color-tertiary`, `--color-on-tertiary`
-- `--color-error`, `--color-on-error`
-- `--color-surface`, `--color-on-surface`
-- `--color-surface-container`, `--color-surface-container-high`
-- `--color-background`, `--color-outline`
+- **Colors** - Primary, secondary, surface, error (auto light/dark)
+- **Spacing** - 9-step scale (`--space-1` to `--space-9`)
+- **Typography** - Fonts, sizes, weights, line heights
+- **Radius** - `--radius-none` through `--radius-full`
+- **Shadows** - `--shadow-0` through `--shadow-5`
+- **Motion** - Durations and easings
 
-**Spacing** (9-step scale)
-- `--space-1` (4px) through `--space-9` (64px)
-
-**Typography**
-- `--font-sans`, `--font-serif`, `--font-mono`
-- `--font-size-1` (12px) through `--font-size-9` (60px)
-- `--font-weight-light`, `--font-weight-regular`, `--font-weight-medium`, `--font-weight-bold`
-- `--line-height-1` through `--line-height-9`
-
-**Border Radius**
-- `--radius-none`, `--radius-xs`, `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-xl`, `--radius-full`
-
-**Shadows**
-- `--shadow-0` (none) through `--shadow-5`
-
-**Motion**
-- `--duration-short1` (50ms) through `--duration-extra-long4` (1000ms)
-- `--easing-standard`, `--easing-emphasized`, `--easing-linear`
+See [@okja/chi-tokens](https://github.com/Okja-Engineering/chi-tokens) for the complete token reference.
 
 ## Dark Mode
 
 Colors adapt automatically via `prefers-color-scheme`. No configuration needed.
+
+## Browser Support
+
+Requires browsers supporting:
+- CSS `light-dark()` function
+- OKLCH color space
+- CSS Cascade Layers (`@layer`)
+
+**Supported:** Chrome 123+, Safari 17.5+, Firefox 120+
 
 ## Customization
 
 ### Scaling
 
 ```html
-<html data-scaling="110%">
+<html data-scaling="110">
 ```
 
-Options: `90%`, `95%`, `100%` (default), `105%`, `110%`
+Options: `90`, `95`, `100` (default), `105`, `110`
 
 ### Border Radius
 
@@ -116,6 +108,13 @@ Each theme uses CSS Cascade Layers:
 - **base** - Typography, links, focus states
 
 Your styles layer on top, giving you full cascade control.
+
+## Changelog
+
+### 0.1.0
+- Initial release with default, blue, purple themes
+- CSS reset included
+- Automatic dark mode via `prefers-color-scheme`
 
 ## License
 

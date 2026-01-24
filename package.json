@@ -27,7 +27,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@okja/chi-tokens": "^0.4.2"
+    "@okja/chi-tokens": "^0.5.1"
   },
   "devDependencies": {
     "postcss": "^8.5.6",
