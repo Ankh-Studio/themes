@@ -10,8 +10,8 @@
 @import './reset.css' layer(reset);
 
 /* Tokens layer */
-@import '@okja/chi-tokens/dist/tokens.css';
-@import '@okja/chi-tokens/dist/colors/blue.css';
+@import '@ankh-studio/tokens/dist/tokens.css';
+@import '@ankh-studio/tokens/dist/colors/blue.css';
 
 /* Custom media queries */
 @import './internal/breakpoints.css';

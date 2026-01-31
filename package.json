@@ -1,9 +1,20 @@
 {
-  "name": "@okja/chi-themes",
+  "name": "@ankh-studio/themes",
   "version": "0.1.0",
-  "description": "Pre-composed CSS themes built on Chi Design System tokens",
+  "description": "Pre-composed CSS themes built on Ankh Studio design tokens",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Matthew Van Dusen",
+    "url": "https://github.com/matthewvandusen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankh-studio/themes.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "publishConfig": {
     "access": "public",
     "provenance": true
@@ -23,16 +34,17 @@
   ],
   "scripts": {
     "build": "postcss 'src/*.css' --dir dist --base src",
-    "check": "stylelint 'src/**/*.css'",
-    "clean": "rm -rf dist"
+    "clean": "rimraf dist",
+    "lint": "stylelint 'src/**/*.css'"
   },
   "dependencies": {
-    "@okja/chi-tokens": "^0.5.1"
+    "@ankh-studio/tokens": "^0.5.2"
   },
   "devDependencies": {
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
+    "rimraf": "^6.1.2",
     "stylelint": "^16.12.0",
     "stylelint-config-standard": "^37.0.0"
   }
