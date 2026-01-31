@@ -1,25 +1,25 @@
-# @okja/chi-themes
+# @ankh-studio/themes
 
-Pre-composed CSS themes built on Chi Design System tokens. Import one file and get reset, tokens, and base styles.
+Pre-composed CSS themes built on Ankh Studio design tokens. Import one file and get reset, tokens, and base styles.
 
-Built on [@okja/chi-tokens](https://github.com/Okja-Engineering/chi-tokens) - the foundational design tokens for the Chi Design System.
+Built on [@ankh-studio/tokens](https://github.com/ankh-studio/tokens) - the foundational design tokens for the Ankh Studio design system.
 
 ## Installation
 
 ```bash
-npm install @okja/chi-themes
+npm install @ankh-studio/themes
 ```
 
 ## Quick Start
 
 ```css
-@import '@okja/chi-themes/default.css';
+@import '@ankh-studio/themes/default.css';
 ```
 
 Or in HTML:
 
 ```html
-<link rel="stylesheet" href="node_modules/@okja/chi-themes/dist/default.css">
+<link rel="stylesheet" href="node_modules/@ankh-studio/themes/dist/default.css">
 ```
 
 ## Available Themes
@@ -62,7 +62,7 @@ All themes include design tokens:
 - **Shadows** - `--shadow-0` through `--shadow-5`
 - **Motion** - Durations and easings
 
-See [@okja/chi-tokens](https://github.com/Okja-Engineering/chi-tokens) for the complete token reference.
+See [@ankh-studio/tokens](https://github.com/ankh-studio/tokens) for the complete token reference.
 
 ## Dark Mode
 
@@ -104,10 +104,15 @@ Each theme uses CSS Cascade Layers:
 ```
 
 - **reset** - Normalize browser defaults
-- **tokens** - Design tokens from @okja/chi-tokens
+- **tokens** - Design tokens from @ankh-studio/tokens
 - **base** - Typography, links, focus states
 
 Your styles layer on top, giving you full cascade control.
+
+## Documentation
+
+- [Architecture Decision Records](./docs/adr/) - Design decisions and proposals
+- [Contributing](./CONTRIBUTING.md) - How to contribute
 
 ## Changelog
 
