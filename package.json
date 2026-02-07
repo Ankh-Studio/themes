@@ -6,11 +6,11 @@
   "license": "MIT",
   "author": {
     "name": "Matthew Van Dusen",
-    "url": "https://github.com/matthewvandusen"
+    "url": "https://github.com/imagineux"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ankh-studio/themes.git"
+    "url": "git+https://github.com/Ankh-Studio/themes.git"
   },
   "engines": {
     "node": ">=20"
@@ -38,7 +38,7 @@
     "lint": "stylelint 'src/**/*.css'"
   },
   "dependencies": {
-    "@ankh-studio/tokens": "^0.5.2"
+    "@ankh-studio/tokens": "^0.5.8"
   },
   "devDependencies": {
     "postcss": "^8.5.6",
