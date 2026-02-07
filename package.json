@@ -1,6 +1,6 @@
 {
   "name": "@ankh-studio/themes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pre-composed CSS themes built on Ankh Studio design tokens",
   "type": "module",
   "license": "MIT",
