@@ -95,19 +95,47 @@ Options: `90`, `95`, `100` (default), `105`, `110`
 
 Options: `none`, `small`, `medium` (default), `large`
 
-## Architecture
+## Cascade Layers
 
-Each theme uses CSS Cascade Layers:
+Each theme declares this layer order:
 
 ```css
-@layer reset, tokens, base;
+@layer reset, tokens, intention, palette, base, components;
 ```
 
-- **reset** - Normalize browser defaults
-- **tokens** - Design tokens from @ankh-studio/tokens
-- **base** - Typography, links, focus states
+| Layer | Purpose |
+|-------|---------|
+| `reset` | Normalize browser defaults |
+| `tokens` | Design tokens from @ankh-studio/tokens |
+| `intention` | Cognitive-intention tokens (reserved for future use) |
+| `palette` | Color palette overrides (reserved for future use) |
+| `base` | Typography, links, focus states |
+| `components` | Component-library styles (e.g. `@ankh-studio/components`) |
 
-Your styles layer on top, giving you full cascade control.
+### Why `components` exists
+
+The `components` layer gives component authors a predictable place in the cascade. Styles in `@layer components { ... }` will always win over `base` but lose to unlayered application CSS. This means component packages can ship styles that integrate cleanly without specificity wars.
+
+### Overriding theme and component styles
+
+Unlayered CSS (the default) automatically overrides all layered styles:
+
+```css
+@import '@ankh-studio/themes/default.css';
+
+/* This wins over any layered rule, no !important needed */
+.button { background: hotpink; }
+```
+
+If your app uses its own cascade layers, declare them after `components`:
+
+```css
+@layer reset, tokens, intention, palette, base, components, app;
+
+@layer app {
+  .button { background: hotpink; }
+}
+```
 
 ## Documentation
 
@@ -115,6 +143,11 @@ Your styles layer on top, giving you full cascade control.
 - [Contributing](./CONTRIBUTING.md) - How to contribute
 
 ## Changelog
+
+### 0.2.0
+- Add `components` layer to cascade layer ordering
+- Align declared layer order with ADR-001: `reset, tokens, intention, palette, base, components`
+- Document cascade layers and override patterns in README
 
 ### 0.1.0
 - Initial release with default, blue, purple themes
