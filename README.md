@@ -145,8 +145,9 @@ If your app uses its own cascade layers, declare them after `components`:
 ## Changelog
 
 ### 0.2.0
-- Add `components` layer to cascade layer ordering
-- Align declared layer order with ADR-001: `reset, tokens, intention, palette, base, components`
+- Expand cascade layer ordering: `reset, tokens, intention, palette, base, components`
+- Add `intention` and `palette` layers (reserved, per ADR-001)
+- Add `components` layer for component-library styles
 - Document cascade layers and override patterns in README
 
 ### 0.1.0
